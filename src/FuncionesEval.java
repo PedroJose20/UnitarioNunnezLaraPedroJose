@@ -1,4 +1,4 @@
-public class FuncionesEvalTest {
+public class FuncionesEval {
     /**
      * Método que calcula cuando un numero es un número perfecto.
      * Un número es un número perfecto cuando la suma e sus divisores
@@ -52,7 +52,13 @@ public class FuncionesEvalTest {
      * @return Cantidad de veces que aparece el número en el array.
      */
     public static int contarApariciones(int[] numeros, int valor) {
-        return 0;
+        int apariciones=0;
+        for (int i = 0; i < numeros.length; i++) {
+            if (numeros[i] == valor) {
+                apariciones++;
+            }
+        }
+        return apariciones;
     }
 
 
@@ -91,6 +97,15 @@ public class FuncionesEvalTest {
      * @throws IllegalArgumentException Si el array está vacío o es null.
      */
     public static int encontrarMayor(int[] array) {
-        return 0;
+        if (array == null || array.length == 0) {
+            throw new IllegalArgumentException("El array no puede ser null o estar vacio");
+        }
+        int mayor=array[0];
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > mayor) {
+                mayor = array[i];
+            }
+        }
+        return mayor;
     }
 }
